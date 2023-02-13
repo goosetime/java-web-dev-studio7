@@ -1,10 +1,21 @@
 package org.launchcode.studio7;
 
-public class DVD {
+import java.util.ArrayList;
 
-    // TODO: Implement your custom interface.
+public class DVD extends BaseDisc {
 
-    // TODO: Determine which fields, methods, and constructors can be extended from the base class and which ones
-    //  need to be declared separately.
+    private ArrayList<String> leadActors;
+    public DVD(String title, String author, String discType, String productionCo, String[] actorArray) {
+        super(title, author, discType, productionCo);
+        for (int i = 0; i < actorArray.length; i++) {
+            leadActors.add(actorArray[i]);
+        }
+    }
 
+    @Override
+    public String toString() {
+        return "DVD{" +
+                "leadActors=" + leadActors +
+                '}';
+    }
 }
